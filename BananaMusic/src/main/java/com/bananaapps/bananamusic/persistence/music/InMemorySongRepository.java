@@ -6,6 +6,9 @@ import java.util.stream.Collectors;
 
 import com.bananaapps.bananamusic.domain.music.SongCategory;
 import com.bananaapps.bananamusic.domain.music.Song;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 
 public class InMemorySongRepository implements SongRepository {
 

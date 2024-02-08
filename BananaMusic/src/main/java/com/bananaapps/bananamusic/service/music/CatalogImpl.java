@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,7 +17,7 @@ import com.bananaapps.bananamusic.persistence.music.SongRepository;
 @ToString
 public class CatalogImpl implements Catalog {
 
-    @Autowired
+
     private SongRepository songRepository;
 
     @Override
