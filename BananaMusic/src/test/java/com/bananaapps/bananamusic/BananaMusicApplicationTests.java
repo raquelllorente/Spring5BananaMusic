@@ -1,5 +1,7 @@
 package com.bananaapps.bananamusic;
 
+import com.bananaapps.bananamusic.config.RepoConfig;
+import com.bananaapps.bananamusic.config.ServiceConfig;
 import com.bananaapps.bananamusic.config.SpringConfig;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -14,8 +16,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ContextConfiguration(classes = {SpringConfig.class})
 //@EnableAutoConfiguration
 class BananaMusicApplicationTests {
-
-
 	@Test
 	void contextLoads() {
 

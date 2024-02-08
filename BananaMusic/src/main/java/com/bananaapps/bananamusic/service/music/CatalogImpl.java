@@ -17,7 +17,7 @@ import com.bananaapps.bananamusic.persistence.music.SongRepository;
 @ToString
 public class CatalogImpl implements Catalog {
 
-
+    @Autowired
     private SongRepository songRepository;
 
     @Override
