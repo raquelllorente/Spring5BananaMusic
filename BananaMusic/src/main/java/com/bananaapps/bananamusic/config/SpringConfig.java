@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import({RepoConfig.class, ServiceConfig.class})
-@ComponentScan(basePackages = {"com.bananaapps.bananamusic.persistence.music", "com.bananaapps.bananamusic.service.music"})
+@ComponentScan(basePackages = "com.bananaapps.bananamusic")
 public class SpringConfig {
 
 
