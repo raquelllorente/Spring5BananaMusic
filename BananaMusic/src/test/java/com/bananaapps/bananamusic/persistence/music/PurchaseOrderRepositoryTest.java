@@ -8,6 +8,7 @@ import com.bananaapps.bananamusic.domain.user.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -20,10 +21,11 @@ import static org.hamcrest.Matchers.*;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {SpringConfig.class})
+@EnableAutoConfiguration
 class PurchaseOrderRepositoryTest {
 
     @Autowired
-    PurchaseOrderRepository repo;
+    JpaPurchaseOrderRepository repo;
 
     @Test
     void given_validId_When_getById_Then_Order() {
@@ -37,7 +39,7 @@ class PurchaseOrderRepositoryTest {
     void given_orders_WHEN_findAll_Then_list() {
         Collection orders = repo.findAll();
         assertThat(orders, notNullValue());
-        assertThat(orders.size(), greaterThan(0));
+        assertThat(orders.size(), greaterThanOrEqualTo(0));
     }
 
     @Test

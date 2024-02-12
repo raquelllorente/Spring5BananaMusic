@@ -7,6 +7,7 @@ import com.bananaapps.bananamusic.domain.music.SongCategory;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -20,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {SpringConfig.class})
+@EnableAutoConfiguration
 class SongRepositoryTest {
     @Autowired
     SongRepository repo;
@@ -48,10 +50,10 @@ class SongRepositoryTest {
     }
 
     @Test
-    void given_invalidKeyword_When_findByKeyword_Then_null() {
+    void given_invalidKeyword_When_findByKeyword_Then_Empty() {
         String keyword = "axx";
         Collection<Song> songs = repo.findByKeyword(keyword);
-        assertThat(songs, nullValue());
+        assertThat(songs, empty());
         assertThat(songs.size(), equalTo(0));
     }
 

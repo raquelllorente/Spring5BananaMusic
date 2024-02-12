@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 import java.util.*;
 
-@Component
+//@Component
 public class InMemoryPurchaseOrderRepository implements PurchaseOrderRepository {
     private Set<PurchaseOrder> orders = new HashSet<>(Arrays.asList(
             new PurchaseOrder(1L, 1, true, LocalDate.now(), new User(1), List.of(new PurchaseOrderLineSong()))

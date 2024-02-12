@@ -5,15 +5,15 @@ import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
+@Entity
+@PrimaryKeyJoinColumn(name = "song_id")
 public class OfflineSong extends Song {
 
     private String url;
