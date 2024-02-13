@@ -1,22 +1,15 @@
 package com.bananaapps.bananamusic.persistence;
 
-import com.bananaapps.bananamusic.domain.music.Song;
-import com.bananaapps.bananamusic.domain.music.SongCategory;
 import com.bananaapps.bananamusic.domain.user.User;
-import com.bananaapps.bananamusic.persistence.music.SongRepository;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.repository.query.FluentQuery;
-import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
 import java.util.*;
 import java.util.function.Function;
-import java.util.stream.Collectors;
 
-//@Component
 public class InMemoryUserRepository implements UserRepository {
 
 

@@ -1,15 +1,13 @@
 package com.bananaapps.bananamusic.service.music;
 
 
-import com.bananaapps.bananamusic.config.ServiceConfig;
 import com.bananaapps.bananamusic.config.SpringConfig;
 import com.bananaapps.bananamusic.domain.music.SongCategory;
 import com.bananaapps.bananamusic.domain.music.Song;
-import com.bananaapps.bananamusic.service.music.Catalog;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
@@ -21,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {SpringConfig.class})
+@ActiveProfiles("prod")
 public class CatalogTest {
 
     @Autowired
