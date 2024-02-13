@@ -10,6 +10,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @Entity
+@Table(name = "inventory")
 public class Backlog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +19,7 @@ public class Backlog {
     private int quantity;
     private int version;
     @ManyToOne
-    @JoinColumn(name = "song_id")
+    @JoinColumn(name = "tune_id")
     private Song item;
 
     public Backlog(String location, int quantity) {

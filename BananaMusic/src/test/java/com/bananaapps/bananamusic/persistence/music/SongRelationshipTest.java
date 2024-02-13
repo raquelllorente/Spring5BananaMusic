@@ -28,7 +28,7 @@ public class SongRelationshipTest {
     @Autowired
     private PlatformTransactionManager transactionManager;
 
-    // @Test
+     @Test
     public void testBacklogAccessPositive() {
         DefaultTransactionDefinition definition = new DefaultTransactionDefinition();
         TransactionStatus transaction = transactionManager.getTransaction(definition);

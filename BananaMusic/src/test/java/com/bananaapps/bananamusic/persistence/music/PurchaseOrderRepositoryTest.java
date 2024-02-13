@@ -52,9 +52,9 @@ class PurchaseOrderRepositoryTest {
         PurchaseOrder order = new PurchaseOrder(null, 1, true, LocalDate.now(), new User(1), lines);
 
         // TODO: uncomment when relations set
-        /*for (PurchaseOrderLineSong line : lines) {
+        for (PurchaseOrderLineSong line : lines) {
             line.setOrder(order);
-        }*/
+        }
 
         order = repo.save(order);
 

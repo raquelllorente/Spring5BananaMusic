@@ -17,6 +17,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @ToString
 @Entity
+@Table(name = "tune")
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Song {
     @Id
@@ -24,10 +25,12 @@ public class Song {
     private Long id;
     private String title, artist;
     private LocalDate releaseDate;
+    @Column(name = "cost")
     private BigDecimal price;
     @Enumerated(EnumType.STRING)
     private SongCategory songCategory;
     private int version;
+    @ToString.Exclude
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Backlog> backlogRecords = new ArrayList<Backlog>();
 

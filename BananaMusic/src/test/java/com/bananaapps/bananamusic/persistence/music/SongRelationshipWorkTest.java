@@ -53,7 +53,7 @@ public class SongRelationshipWorkTest {
 	}
 
 	// ****  Test to be run without cascading set	
-	// @Test
+	 @Test
 	public void testInventoryUpdateNoCascadePositive() {
 		DefaultTransactionDefinition definition = new DefaultTransactionDefinition();
 		TransactionStatus transaction = transactionManager.getTransaction(definition);

@@ -13,7 +13,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @ToString
 @Entity
-@PrimaryKeyJoinColumn(name = "song_id")
+@Table(name = "downloadable_item")
+@PrimaryKeyJoinColumn(name = "tune_id")
 public class OfflineSong extends Song {
 
     private String url;
