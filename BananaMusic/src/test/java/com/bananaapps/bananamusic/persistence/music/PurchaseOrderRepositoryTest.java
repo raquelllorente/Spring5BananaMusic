@@ -23,7 +23,6 @@ import static org.hamcrest.Matchers.*;
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {SpringConfig.class})
 @EnableAutoConfiguration
-@ActiveProfiles("prod")
 class PurchaseOrderRepositoryTest {
 
     @Autowired

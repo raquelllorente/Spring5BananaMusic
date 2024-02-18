@@ -22,7 +22,6 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {SpringConfig.class})
 @EnableAutoConfiguration
-@ActiveProfiles("prod")
 class SongRepositoryTest {
     @Autowired
     SongRepository repo;

@@ -19,7 +19,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {SpringConfig.class})
-@ActiveProfiles("prod")
 public class CatalogTest {
 
     @Autowired

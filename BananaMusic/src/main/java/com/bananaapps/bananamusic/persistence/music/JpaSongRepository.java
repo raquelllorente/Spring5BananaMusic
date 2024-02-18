@@ -13,7 +13,6 @@ import javax.persistence.TypedQuery;
 import java.util.Collection;
 
 @Repository
-@Profile("prod")
 public class JpaSongRepository implements SongRepository{
 
     @PersistenceContext

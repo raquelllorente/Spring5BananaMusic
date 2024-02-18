@@ -20,7 +20,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
 @ContextConfiguration(classes = {SpringConfig.class})
-@ActiveProfiles("prod")
 class ShoppingCartTest {
 
     @Autowired
