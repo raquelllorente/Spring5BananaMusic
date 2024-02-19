@@ -67,8 +67,13 @@ public class CatalogImpl implements Catalog {
     }
 
     @Override
-    public Collection<Song> getSongsByKeywords(String keyword) {
-        return songRepository.findByArtistContainingOrTitleContainingAllIgnoreCase(keyword, keyword);
+    public ResponseEntity getSongsByKeywords(String keyword) {
+        Collection<Song> findSongs = songRepository.findByArtistContainingOrTitleContainingAllIgnoreCase(keyword, keyword);
+        if(findSongs.size() >= 1){
+            return ResponseEntity.status(HttpStatus.OK).body(findSongs);
+        } else {
+            throw new SongNotfoundException();
+        }
     }
 
     @Override

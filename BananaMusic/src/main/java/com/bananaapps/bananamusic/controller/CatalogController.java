@@ -22,18 +22,18 @@ public class CatalogController {
     }
 
     @GetMapping("")
-    public ResponseEntity getSongsByKeywords(@RequestParam String keyword){
-        return ResponseEntity.status(HttpStatus.OK).body(catalog.getSongsByKeywords(keyword));
+    public ResponseEntity getSongsByKeywords(@RequestParam(defaultValue = "") String keyword){
+        return catalog.getSongsByKeywords(keyword);
     }
 
     @PostMapping("")
     public ResponseEntity createSong(@RequestBody Song newSong){
-        return ResponseEntity.status(HttpStatus.OK).body(catalog.createSong(newSong));
+        return ResponseEntity.status(HttpStatus.CREATED).body(catalog.createSong(newSong));
     }
 
-    @PostMapping("/save")
+    @PutMapping("")
     public ResponseEntity saveSongs(@RequestBody Collection<Song> songs){
-        return ResponseEntity.status(HttpStatus.OK).body(catalog.saveSongs(songs));
+        return ResponseEntity.status(HttpStatus.CREATED).body(catalog.saveSongs(songs));
     }
 
 

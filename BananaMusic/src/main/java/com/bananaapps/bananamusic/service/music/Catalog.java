@@ -14,7 +14,7 @@ public interface Catalog {
 	   public void save(Song song);
 	   public void saveCollection(Collection<Song> songs);
 	   public ResponseEntity getSongById(Long id);
-	   public Collection<Song> getSongsByKeywords(String keyword);
+	   public ResponseEntity getSongsByKeywords(String keyword);
 	   public Song createSong(Song newSong);
 	   public String saveSongs(Collection<Song> songs);
 	}
