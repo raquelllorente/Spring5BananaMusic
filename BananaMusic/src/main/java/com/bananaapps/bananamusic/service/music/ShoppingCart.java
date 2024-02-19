@@ -5,14 +5,10 @@ import com.bananaapps.bananamusic.exception.SongNotfoundException;
 
 public interface ShoppingCart {
     double getBalance();
-
     void addItem(PurchaseOrderLineSong item);
-
     void removeItem(Long item) throws SongNotfoundException;
-
     int getItemCount();
-
     void empty();
-
     void buy();
+
 }

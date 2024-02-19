@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.time.LocalDateTime;
 
 @Configuration
-public class BananaMusicInterceptor implements HandlerInterceptor {
+public class OrderInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

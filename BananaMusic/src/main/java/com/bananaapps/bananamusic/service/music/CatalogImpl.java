@@ -1,9 +1,11 @@
 package com.bananaapps.bananamusic.service.music;
 
 import java.util.Collection;
+import java.util.List;
 
 import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -52,6 +54,29 @@ public class CatalogImpl implements Catalog {
         }
         System.out.println("If you are seeing this, saveBatch ended normally!");
 
+    }
+
+    @Override
+    public Song getSongById(Long id) {
+        return songRepository.findOne(id);
+    }
+
+    @Override
+    public Collection<Song> getSongsByKeywords(String keyword) {
+        return songRepository.findByArtistContainingOrTitleContainingAllIgnoreCase(keyword, keyword);
+    }
+
+    @Override
+    public Song createSong(Song newSong) {
+        return songRepository.save(newSong);
+    }
+
+    @Override
+    public String saveSongs(Collection<Song> songs) {
+        for(Song s : songs){
+            songRepository.save(s);
+        }
+        return "Se han guardado todas las canciones correctamente";
     }
 
 
