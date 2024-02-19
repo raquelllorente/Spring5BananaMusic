@@ -24,16 +24,16 @@ import java.util.Objects;
 public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Min(1)
+    @Min(value = 1, message = "{id.min}")
     private Long id;
-    @NotBlank
+    @NotBlank(message = "{data.not.blank}")
     private String title, artist;
     private LocalDate releaseDate;
     @Column(name = "cost")
     private BigDecimal price;
     @Enumerated(EnumType.STRING)
     private SongCategory songCategory;
-    @Min(1)
+    @Min(value = 1, message = "{version.min}")
     private int version;
     @ToString.Exclude
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true)

@@ -2,6 +2,10 @@ spring:
   application.name: BananaMusic
   profiles.active: dev
 
+banana.music.openapi:
+  dev-url: http://www.dev.bananamusic.es
+  prod-url: http://www.prod.bananamusic.es
+
 ---
 spring:
   application.name: BananaMusicDev
