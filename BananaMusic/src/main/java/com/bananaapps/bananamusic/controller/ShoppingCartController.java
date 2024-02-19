@@ -5,10 +5,16 @@ import com.bananaapps.bananamusic.service.music.ShoppingCart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
 
 @RestController
 @RequestMapping("/shoppingCart")
+@Validated
+@CrossOrigin(origins = "http://localhost:8080")
 public class ShoppingCartController {
 
     @Autowired
@@ -20,13 +26,13 @@ public class ShoppingCartController {
     }
 
     @PutMapping("")
-    public ResponseEntity addItem(@RequestBody PurchaseOrderLineSong item){
+    public ResponseEntity addItem(@RequestBody @Valid PurchaseOrderLineSong item){
         shoppingCart.addItem(item);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body("Item added");
     }
 
     @DeleteMapping("/{itemId}")
-    public ResponseEntity removeItem(@PathVariable Long itemId) {
+    public ResponseEntity removeItem(@PathVariable @Min(1) Long itemId) {
         shoppingCart.removeItem(itemId);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body("Item removed");
     }

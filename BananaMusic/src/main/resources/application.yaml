@@ -41,6 +41,12 @@ spring:
       ddl-auto: update
       generate-ddl: true
     defer-datasource-initialization: true
-server.port: 8080
+server:
+  port: 8080
+  ssl:
+    key-store: keystore.p12
+    key-store-password: 123456
+    keyStoreType: PKCS12
+    keyAlias: tomcat
 logging:
   level.root: WARN

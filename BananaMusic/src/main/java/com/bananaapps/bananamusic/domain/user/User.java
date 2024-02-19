@@ -3,6 +3,8 @@ package com.bananaapps.bananamusic.domain.user;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,10 +16,12 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Min(1)
     private Integer id;
 
+    @NotBlank
     private String email;
-
+    @NotBlank
     private String password;
 
     @Enumerated(EnumType.STRING)

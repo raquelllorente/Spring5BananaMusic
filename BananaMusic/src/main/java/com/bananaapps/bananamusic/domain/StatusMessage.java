@@ -1,9 +1,15 @@
 package com.bananaapps.bananamusic.domain;
 
 
+import lombok.NonNull;
+
+import javax.validation.constraints.NotBlank;
+
 public class StatusMessage {
 
+    @NonNull
     private Integer status;
+    @NotBlank
     private String message;
 
     public StatusMessage() {

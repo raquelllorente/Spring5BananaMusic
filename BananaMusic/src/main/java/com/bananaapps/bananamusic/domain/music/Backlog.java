@@ -3,6 +3,8 @@ package com.bananaapps.bananamusic.domain.music;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
@@ -14,9 +16,13 @@ import javax.persistence.*;
 public class Backlog {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Min(1)
     private Long id;
+    @NotBlank
     private String location;
+    @Min(1)
     private int quantity;
+    @Min(1)
     private int version;
     @ManyToOne
     @JoinColumn(name = "tune_id")

@@ -3,6 +3,7 @@ package com.bananaapps.bananamusic.domain.music;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 
 @Getter
 @Setter
@@ -13,10 +14,12 @@ import javax.persistence.*;
 public class PurchaseOrderLineSong {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Min(1)
     private Long lineNumber;
     @OneToOne
     @JoinColumn(name = "song_id")
     private Song song;
+    @Min(1)
     private Integer quantity;
     @ManyToOne
     @JoinColumn(name = "order_id")

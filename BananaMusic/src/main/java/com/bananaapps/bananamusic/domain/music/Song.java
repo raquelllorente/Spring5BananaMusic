@@ -3,6 +3,8 @@ package com.bananaapps.bananamusic.domain.music;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -22,13 +24,16 @@ import java.util.Objects;
 public class Song {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Min(1)
     private Long id;
+    @NotBlank
     private String title, artist;
     private LocalDate releaseDate;
     @Column(name = "cost")
     private BigDecimal price;
     @Enumerated(EnumType.STRING)
     private SongCategory songCategory;
+    @Min(1)
     private int version;
     @ToString.Exclude
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, orphanRemoval = true)

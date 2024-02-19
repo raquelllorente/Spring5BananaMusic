@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
@@ -17,7 +18,9 @@ import javax.persistence.*;
 @PrimaryKeyJoinColumn(name = "tune_id")
 public class OfflineSong extends Song {
 
+    @NotBlank
     private String url;
+    @NotBlank
     private String fileType;
 
     public OfflineSong(String num, String title,

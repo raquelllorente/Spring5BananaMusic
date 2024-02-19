@@ -4,6 +4,8 @@ import com.bananaapps.bananamusic.domain.user.User;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -16,6 +18,7 @@ import java.util.List;
 public class PurchaseOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Min(1)
     private Long id;
     private int status;
     private boolean valid;
