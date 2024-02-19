@@ -3,19 +3,19 @@ package com.bananaapps.bananamusic.service.music;
 import java.util.Collection;
 import java.util.List;
 
+import com.bananaapps.bananamusic.exception.SongNotfoundException;
 import lombok.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.bananaapps.bananamusic.domain.music.Song;
 import com.bananaapps.bananamusic.persistence.music.SongRepository;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@ToString
+@Service
 public class CatalogImpl implements Catalog {
 
     @Autowired
@@ -57,8 +57,13 @@ public class CatalogImpl implements Catalog {
     }
 
     @Override
-    public Song getSongById(Long id) {
-        return songRepository.findOne(id);
+    public ResponseEntity getSongById(Long id) {
+        Song findSong = songRepository.findOne(id);
+        if(findSong != null){
+            return ResponseEntity.status(HttpStatus.OK).body(findSong);
+        } else {
+            throw new SongNotfoundException();
+        }
     }
 
     @Override

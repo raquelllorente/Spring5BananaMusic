@@ -1,15 +1,10 @@
 package com.bananaapps.bananamusic.persistence.music;
 
-import com.bananaapps.bananamusic.config.SpringConfig;
 import com.bananaapps.bananamusic.domain.music.OfflineSong;
 import com.bananaapps.bananamusic.domain.music.Song;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
@@ -17,9 +12,7 @@ import org.springframework.transaction.support.DefaultTransactionDefinition;
 import java.util.Collection;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-@ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {SpringConfig.class})
-@EnableAutoConfiguration
+@SpringBootTest
 public class SongInheritanceTest {
 
 	@Autowired
